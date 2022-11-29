@@ -4,7 +4,7 @@ build: clean prepare
 	tsc
 	vite build
 
-prepare:
+prepare: ./generated/api.ts
 
 dev: prepare
 	vite
@@ -20,3 +20,6 @@ format:
 
 clean:
 	rm -rf dist/ dist-ssr/
+
+./generated/api.ts: ./vendor/openapi.json
+	orval
