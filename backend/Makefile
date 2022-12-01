@@ -6,7 +6,6 @@ prepare:
 	virtualenv venv
 	. venv/bin/activate
 	pip3 install -r requirements.txt
-	pip3 install PyJWT python-decouple
 	. venv/bin/activate
 
 openapi.json: export_openapi.py $(wildcard medical_app/**.py)
